@@ -4220,6 +4220,17 @@ extern "C" {
     ) -> ::c_int;
     pub fn memfd_create(name: *const ::c_char, flags: ::c_uint) -> ::c_int;
     pub fn setaudit(auditinfo: *const auditinfo_t) -> ::c_int;
+
+    #[cfg(target_arch = "x86_64")]
+    pub fn getcontext(context: *mut ucontext_t) -> ::c_int;
+    #[cfg(target_arch = "x86_64")]
+    pub fn getcontextx() -> *mut ucontext_t;
+    #[cfg(target_arch = "x86_64")]
+    pub fn setcontext(context: *const ucontext_t) -> ::c_int;
+    #[cfg(target_arch = "x86_64")]
+    pub fn makecontext(context: *mut ucontext_t, hdl: unsafe extern "C" fn(), argc: ::c_int, ...);
+    #[cfg(target_arch = "x86_64")]
+    pub fn swapcontext(dst: *mut ucontext_t, src: *const ucontext_t) -> ::c_int;
 }
 
 #[link(name = "kvm")]

@@ -1511,6 +1511,8 @@ fsid_t
 fstatfs
 ftok
 futimes
+getcontext
+getcontextx
 getdomainname
 getdtablesize
 getgrent
@@ -1591,6 +1593,7 @@ lrand48
 lutimes
 lwpid_t
 madvise
+makecontext
 mallctl
 mallctlbymib
 mallctlnametomib
@@ -1786,6 +1789,7 @@ sendfile
 sendmmsg
 sendmsg
 setaudit
+setcontext
 setdomainname
 setgrent
 setgroups
@@ -1826,6 +1830,7 @@ strcasestr
 strncasecmp
 strndup
 strsignal
+swapcontext
 sync
 syscall
 sysctl
